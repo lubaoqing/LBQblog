@@ -198,11 +198,6 @@ li {list-style: none;}
 	width: 30px;
 	margin: 0 auto;
 	opacity: 0;
-	transition: all 1s;
-}
-.section3.active hr {
-	opacity: 1;
-	width: 80px;
 }
 .section3 .container{
 	width: 1200px;
@@ -211,6 +206,20 @@ li {list-style: none;}
 	opacity: 0;
 	transform: translateY(100px);
 	transition: all 1s;
+}
+.section3 hr,
+.section4 hr,
+.section5 hr,
+.section6 hr{
+	opacity: 0;
+	transition: all 1s;
+}
+.section3.active hr,
+.section4.active hr,
+.section5.active hr,
+.section6.active hr{
+	opacity: 1;
+	width: 80px;
 }
 .section3 .container,
 .section4 .container,
@@ -486,7 +495,7 @@ li {list-style: none;}
 		font-size: 24px;
 	}
 	.section2 .navbar .navcontent {
-		width: 100vw;
+		width: 100%;
 	}
 	.section2 .navbar .navcontent .ul-nav {
 		display: none;
@@ -495,7 +504,7 @@ li {list-style: none;}
 		padding: 0 10px;
 	}
 	.section3 .container {
-		width: 100vw;
+		width: 100%;
 		margin: 20px auto;
 		flex-wrap: wrap;
 	}
@@ -503,15 +512,15 @@ li {list-style: none;}
 		width: 50%;
 	}
 	.section4 {
-		padding-top: 80px;
+		padding-top: 110px;
 		min-height: 155vh;
 	}
 	.section4 .desc {
-		width: 100vw;
+		width: 100%;
 		padding: 0 10px;
 	}
 	.section4 .container {
-		width: 100vw;
+		width: 100%;
 	}
 	.section4 .container .w50 {
 		width: 46%;
@@ -526,22 +535,19 @@ li {list-style: none;}
 	.section4 .container .item:hover a {
 		transform: scale(1);
 	}
-	.section5 {
-		padding-top: 90px;
+	.section5,.section3,.section6 {
+		padding-top: 110px;
 	}
 	.section5 .container {
-		width: 100vw;
+		width: 100%;
 		flex-wrap: wrap;
 		margin: 20px auto 0;
 	}
 	.section5 .container .w50 {
 		width: 50%;
 	}
-	.section6 {
-		padding-top: 90px;
-	}
 	.section6 .container {
-		width: 100vw;
+		width: 100%;
 		margin: 20px auto 0;
 	}
 	.section6 ul li {
