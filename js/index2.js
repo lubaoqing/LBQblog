@@ -26,7 +26,6 @@ function getDivHeights () {
 	}
 }
 getDivHeights();/*初始化数组*/
-console.log(divHeights)
 /*窗口大小变化监听*/
 window.addEventListener('resize', function () {
 	/*得到最新的元素高度*/
@@ -38,7 +37,7 @@ var dh = document.documentElement.clientHeight
 /*滚动条监听*/
 window.addEventListener('scroll', function () {
 	var ds = document.documentElement.scrollTop || document.body.scrollTop;
-	if (ds > dh) {
+	if (ds > getHeight(0)) {
 		navbar.style.position = 'fixed';
 	}else {
 		navbar.style.position = 'absolute';
@@ -48,14 +47,22 @@ window.addEventListener('scroll', function () {
 			ditems[i].classList.add('active')
 			for (var o = 0; o < aitems.length; o++) {
 				aitems[o].classList.remove('active')
+				mitems[o].classList.remove('active')
 			}
 			if(i>=1){
 				aitems[i-1].classList.add('active');
+				mitems[i-1].classList.add('active');
 			}
 		}
 	}
+	try{
+		navIcon.classList.remove('active')
+	}catch {
+		
+	}
 })
 var aitems = document.querySelectorAll('.ul-nav li');
+var mitems = document.querySelectorAll('.navM .nav-list');
 var timers = null;
 for (var i = 0; i < aitems.length; i++) {
 	(function (j) {
@@ -64,6 +71,14 @@ for (var i = 0; i < aitems.length; i++) {
 				aitems[o].classList.remove('active')
 			}
 			aitems[j].classList.add('active');
+			var num = getHeight(j)
+			mscrollTo(num)
+		})
+		mitems[j].addEventListener('click', function () {
+			for (var o = 0; o < aitems.length; o++) {
+				mitems[o].classList.remove('active')
+			}
+			mitems[j].classList.add('active');
 			var num = getHeight(j)
 			mscrollTo(num)
 		})
@@ -107,4 +122,15 @@ adMe.addEventListener('click', function () {
 var mrPro = document.querySelector('.mrPro');
 mrPro.addEventListener('click', function () {
 	mscrollTo(3*dh)
+})
+
+
+/*菜单按钮*/
+var navIcon = document.querySelector('.nav-icon');
+navIcon.addEventListener('click', function() {
+	if (navIcon.classList.contains('active')) {
+		navIcon.classList.remove('active')
+	} else{
+		navIcon.classList.add('active')
+	}
 })
