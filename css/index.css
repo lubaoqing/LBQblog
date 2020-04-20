@@ -116,6 +116,11 @@ li {list-style: none;}
 	justify-content: space-between;
 	align-items: center;
 }
+.section2 .navbar .navcontent a {
+	color: #fff;
+	text-decoration: none;
+	padding-left: 15px;
+}
 .section2 .navbar .navcontent .ul-nav {
 	display: flex;
 	justify-content: space-between;
@@ -132,6 +137,9 @@ li {list-style: none;}
 }
 .section2 .navbar .navcontent .ul-nav li.active {
 	color: #E87E04;
+}
+.section2 .navbar .navcontent .nav-icon {
+	display: none;
 }
 .fixed {
 	position: fixed;
@@ -471,6 +479,7 @@ li {list-style: none;}
 	flex-direction: column;
 	justify-content: space-around;
 	height: 140px;
+	font-size: 14px;
 }
 .section6 .my-work.left {
 	text-align: right;
@@ -490,7 +499,6 @@ li {list-style: none;}
 }
 
 @media screen and (max-width:412px) {
-	
 	.section1 .myInfo {
 		padding-top: 10vh;
 	}
@@ -502,6 +510,9 @@ li {list-style: none;}
 	}
 	.section2 .navbar .navcontent .ul-nav {
 		display: none;
+	}
+	.section2 .navbar .navcontent .nav-icon {
+		display: block;
 	}
 	.section2 .navbar .nav-icon .navM {
 		position: absolute;
@@ -573,12 +584,21 @@ li {list-style: none;}
 	.section5 .container .w50 {
 		width: 50%;
 	}
+	.section6 {
+		height: 105vh;
+	}
 	.section6 .container {
 		width: 100%;
 		margin: 20px auto 0;
 	}
+	.section6 .container .myjl {
+		padding: 10px;
+	}
 	.section6 ul li {
-		height: 100px;
+		height: 250px;
+	}
+	.section6 ul li:not(:last-child) {
+		margin-bottom: 0;
 	}
 	.section6 .data-box {
 		width: 100px;
@@ -587,15 +607,26 @@ li {list-style: none;}
 		transform: translateX(0);
 	}
 	.section6 .my-work.left,.section6 .my-work.right {
-		left: 110px;
-		width: calc(100% - 110px);
+		left: 70px;
+		width: calc(100% - 75px);
 		text-align: left;
+		top: 110px;
 	}
 	.section6 ul li:not(:last-child)::after {
 		top: 100px;
 		left: 50px;
 		width: 1px;
-		height: 100px;
+		height: 150px;
+		background: #eee;
+	}
+	.section6 ul li:last-child::after{
+		content: '';
+		display: block;
+		position: absolute;
+		top: 100px;
+		left: 50px;
+		width: 1px;
+		height: 150px;
 		background: #eee;
 	}
 }
