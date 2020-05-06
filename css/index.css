@@ -193,7 +193,7 @@ li {list-style: none;}
 
 .section3 {
 	padding-top: 160px;
-	background-image: url(../img/bg2.jpg);
+	background-image: url(../img/skills-bg.jpg);
 	background-attachment: fixed;
 }
 .section3 h2 {
@@ -330,7 +330,7 @@ li {list-style: none;}
 
 .section5 {
 	padding-top: 160px;
-	background-image: url(../img/bg1.jpg);
+	background-image: url(../img/services-bg.jpg);
 	background-attachment: fixed;
 }
 .section5 h2 {
@@ -498,7 +498,7 @@ li {list-style: none;}
 	font-size: 14px;
 }
 
-@media screen and (max-width:412px) {
+@media screen and (max-width:416px) {
 	.section1 .myInfo {
 		padding-top: 10vh;
 	}
